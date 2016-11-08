@@ -1,4 +1,4 @@
-package com.upside.branch_io.client;
+package com.upside.branch_io.client.api;
 
 
 import com.upside.branch_io.client.model.CreateLinkRequest;

@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply from: 'https://raw.githubusercontent.com/upside-services/upside-gradle/master/upside-core.gradle'
+apply from: 'https://raw.githubusercontent.com/upside-services/upside-gradle/master/upside-autovalue.gradle'
+apply from: 'https://raw.githubusercontent.com/upside-services/upside-gradle/master/upside-jacoco.gradle'
+
+group = 'com.upside.branch_io_client'
+
+dependencies {
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-jackson:2.1.0'
+    compile 'com.google.guava:guava:20.0'
+
+    testCompile 'com.squareup.okhttp3:mockwebserver:3.4.2'
+    testCompile 'junit:junit:4.12'
+}
+
+apply plugin: 'idea'
+
+test {
+    maxParallelForks=1
+
+    systemProperty 'branch_api_key', System.getenv('BRANCH_API_KEY')
+}

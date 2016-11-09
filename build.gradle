@@ -18,6 +18,5 @@ apply plugin: 'idea'
 
 test {
     maxParallelForks=1
-
     systemProperty 'branch_api_key', System.getenv('BRANCH_API_KEY')
 }

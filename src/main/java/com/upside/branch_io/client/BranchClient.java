@@ -40,11 +40,11 @@ public class BranchClient {
 
     public URL createLink(String alias, String capmaign, String channel, Map<String, String> data) {
         CreateLinkRequest createLinkRequest = CreateLinkRequest.create(
-                "",
+                this.branchCredentials.getAPIKey(),
                 alias,
                 LinkType.DEFAULT.getCode(),
-                "",
-                "",
+                channel,
+                capmaign,
                 ImmutableList.of(),
                 CreateLinkRequest.convertData(data));
         Call<CreateLinkResponse> call = this.branchAPI.createLink(createLinkRequest);

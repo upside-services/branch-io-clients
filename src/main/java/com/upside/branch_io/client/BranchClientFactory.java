@@ -1,6 +1,9 @@
 package com.upside.branch_io.client;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.base.Strings;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import static com.upside.branch_io.client.BranchClientFactory.CLIENT_TYPE.MOCK;
 
 /**
@@ -8,6 +11,7 @@ import static com.upside.branch_io.client.BranchClientFactory.CLIENT_TYPE.MOCK;
  * or a mock client.</p>
  */
 public class BranchClientFactory {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BranchClientFactory.class);
 
     private static final String API_KEY = "apiKey";
     private static final String API_SECRET = "apiSecret";
@@ -29,9 +33,17 @@ public class BranchClientFactory {
 
     public BranchClient build() {
         if (MOCK == this.clientType) {
+            LOGGER.info("Returning MockBranchClient");
+            return new MockBranchClient();
+        }
+        else if(Strings.isNullOrEmpty(this.apiKey) && Strings.isNullOrEmpty(this.apiSecret)) {
+            // Assume that if the user hasn't provided an apiKey or apiSecret that we should fail gracefully and provide a
+            // Mock client.
+            LOGGER.warn("Because Branch.IO apiKey and apiSecret are undefined, defaulting to MockBranchClient.");
             return new MockBranchClient();
         }
         else {
+            LOGGER.debug("Constructing real RetrofitBranchClient");
             return RetrofitBranchClient.create(BranchCredentials.create(this.apiKey, this.apiSecret));
         }
     }
@@ -60,5 +72,5 @@ public class BranchClientFactory {
         this.clientType = clientType;
     }
 
-    
+
 }

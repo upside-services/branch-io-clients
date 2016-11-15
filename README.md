@@ -19,8 +19,7 @@ Our production configuration YAML:
 branchIO:
     apiKey: <our key>
     apiSecret: <our secret>
-    # don't need to specify this; just to demonstrate you could also set to 'MOCK' in a test-config.yml situation
-    clientType: REAL
+    clientType: REAL   # alternatively, "MOCK", in which case you don't need to specify a Key or Secret
 ```
 
 Our configuration POJO:

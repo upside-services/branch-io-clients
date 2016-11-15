@@ -13,11 +13,14 @@ import retrofit2.converter.jackson.JacksonConverterFactory;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by bsiemon on 11/8/16.
  */
 public class RetrofitBranchClient implements BranchClient {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BranchClient.class);
     private final BranchCredentials branchCredentials;
     private final BranchAPI branchAPI;
 
@@ -26,6 +29,8 @@ public class RetrofitBranchClient implements BranchClient {
                 .baseUrl("https://api.branch.io/v1/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
+
+        LOGGER.debug("Constructed new BranchClient '{}'", retrofit);
 
         BranchAPI api = retrofit.create(BranchAPI.class);
         return new RetrofitBranchClient(branchCredentials, api);
@@ -53,14 +58,17 @@ public class RetrofitBranchClient implements BranchClient {
             Response<CreateLinkResponse> response = call.execute();
 
             if (!response.isSuccessful()) {
-                throw new RuntimeException(String.format(
-                        "status: %s Unable to create new link. error: %s",
-                        response.code(), response.errorBody().string()));
+                String errorMessage = String.format("status: %s Unable to create new link. error: %s",
+                        response.code(), response.errorBody().string());
+                LOGGER.error(errorMessage);
+                throw new RuntimeException(errorMessage);
             }
 
+            LOGGER.debug("Response code from CreateLinkRequest = {}", response.code());
             return new URL(response.body().getUrl());
         }
         catch (IOException e) {
+            LOGGER.error("Exception during BranchAPI create link call '{}'", e);
             throw new RuntimeException(e);
         }
     }

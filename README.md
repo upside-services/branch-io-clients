@@ -20,7 +20,7 @@ branchIO:
     apiKey: <our key>
     apiSecret: <our secret>
     # don't need to specify this; just to demonstrate you could also set to 'MOCK' in a test-config.yml situation
-    type: REAL
+    clientType: REAL
 ```
 
 Our configuration POJO:

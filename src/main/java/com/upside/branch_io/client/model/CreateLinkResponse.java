@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.auto.value.AutoValue;
 
-import static javafx.scene.input.KeyCode.J;
-
 /**
  * Created by bsiemon on 11/8/16.
  */

@@ -21,7 +21,7 @@ import static org.junit.Assert.assertTrue;
 /**
  * Created by bsiemon on 11/8/16.
  */
-public class TestBranchAPI {
+public class TestRetroFitBranchClient {
 
     public static final String BRANCH_KEY = System.getProperty("branch_api_key");
 

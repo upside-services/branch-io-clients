@@ -11,9 +11,9 @@ import com.google.auto.value.AutoValue;
 public abstract class CreateLinkResponse {
 
     @JsonCreator
-    public static CreateLinkResponse create(@JsonProperty("url") String url) {
-        return new AutoValue_CreateLinkResponse(url);
+    public static CreateLinkResponse create(@JsonProperty("url") String uri) {
+        return new AutoValue_CreateLinkResponse(uri);
     }
 
-    public abstract String getUrl();
+    public abstract String getUri();
 }

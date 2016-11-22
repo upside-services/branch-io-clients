@@ -11,7 +11,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 
 import java.io.IOException;
-import java.net.URL;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +44,7 @@ public class RetrofitBranchClient implements BranchClient {
 
 
     @Override
-    public URL createLink(String alias, String campaign, String channel, Map<String, String> data) {
+    public URI createLink(String alias, String campaign, String channel, Map<String, String> data) {
         CreateLinkRequest createLinkRequest = CreateLinkRequest.create(
                 this.branchCredentials.getAPIKey(),
                 alias,
@@ -65,11 +66,15 @@ public class RetrofitBranchClient implements BranchClient {
             }
 
             LOGGER.debug("Response code from CreateLinkRequest = {}", response.code());
-            return new URL(response.body().getUrl());
+            return new URI(response.body().getUri());
         }
-        catch (IOException e) {
-            LOGGER.error("Exception during BranchAPI create link call '{}'", e);
+        catch (URISyntaxException e) {
+            LOGGER.error("Exception creating a URI from response body", e);
             throw new RuntimeException(e);
+        }
+        catch (IOException ioe) {
+            LOGGER.error("Exception during BranchAPI create link call", ioe);
+            throw new RuntimeException(ioe);
         }
     }
 }

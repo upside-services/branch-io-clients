@@ -53,7 +53,7 @@ public class TestRetroFitBranchClient {
 
         CreateLinkResponse createLinkResponse = res.body();
 
-        assertTrue("Link malformed", createLinkResponse.getUrl().endsWith(alias));
+        assertTrue("Link malformed", createLinkResponse.getUri().endsWith(alias));
     }
 
     @Test

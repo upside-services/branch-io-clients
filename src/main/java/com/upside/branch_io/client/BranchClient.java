@@ -1,6 +1,6 @@
 package com.upside.branch_io.client;
 
-import java.net.URL;
+import java.net.URI;
 import java.util.Map;
 
 /**
@@ -8,5 +8,5 @@ import java.util.Map;
  */
 public interface BranchClient {
 
-    URL createLink(String alias, String campaign, String channel, Map<String, String> data);
+    URI createLink(String alias, String campaign, String channel, Map<String, String> data);
 }

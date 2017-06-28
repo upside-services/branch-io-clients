@@ -20,7 +20,7 @@ public class TestRetryingBranchClient {
 
     private final static String CODE = "myCode";
     private final static String PROGRAM = "myProgram";
-    private final static Map<String, String> DATA_MAP = ImmutableMap.of("upsidePromotionCode", CODE,
+    private final static Map<String, String> DATA_MAP = ImmutableMap.of("promoCode", CODE,
                                                                         "programId", PROGRAM);
     private final static String CAMPAIGN = "campaign";
     private final static String CHANNEL = "channel";

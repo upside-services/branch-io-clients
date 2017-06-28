@@ -1,0 +1,65 @@
+from fix import fix
+from fix.BranchClient import BranchClient
+from pprint import pprint
+import json
+import jsondiff
+
+config = {
+    'alpha': {
+        'key': 'key_live_ifzjOfbrf1gG6VPN0qSOnpjkBwfGxCF6',
+        'secret': 'secret_live_UacuxlWRATQkCSVey2Zcy4jvEfK9PxYr',
+        'url': 'https://upsideappbeta.app.link'
+    },
+    'prod': {
+        'key': 'key_live_lpAkPglukSH5VuTvgjti5lokDBjIm0Kn',
+        'secret': 'secret_live_An8B1VirdA8nPucN7JHClDxII5hjuTZd',
+        'url': 'https://upside.app.link'
+    }
+}
+program_id = 'REF_01';
+tier = 'alpha'
+test_code = 'AAAA782'
+bc = BranchClient(config[tier]['key'], config[tier]['secret'], config[tier]['url'])
+def fix_referral_code(branch_client, programId, code):
+    new_data = {
+        'promoCode': code,
+        'programId': programId
+    }
+    return branch_client.update_deep_link(code, **new_data)
+
+original = bc.get_deep_link(test_code)
+pprint(original)
+modified = fix_referral_code(bc, program_id, test_code)
+pprint(modified)
+
+jsondiff.diff(original, modified)
+
+
+
+
+def get_code(code):
+     for rc in all_referral_codes:
+         if rc['referralCode']['code'] == code:
+             return rc
+
+
+from upside_core.services import create_public_service
+from promo_service.client import PromoService
+from pprint import pprint
+import jsondiff
+import json
+import sys
+import time
+import logging
+from BranchClient import BranchClient
+
+rb = create_public_service('prod', PromoService)
+all_referral_codes = rb.get_all_referral_codes('REF_01')
+
+code = 'BRIJ932'
+count = 0
+for rc in all_referral_codes:
+    if code in rc['referralCode']['code']:
+        print 'Found {} at position {}'.format(code, count)
+    else:
+        count += 1

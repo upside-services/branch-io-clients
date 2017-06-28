@@ -1,0 +1,4 @@
+upside-core
+runbook-service-client
+requests
+jsondiff

@@ -28,12 +28,12 @@ logger.addHandler(fh)
 config = {
     'alpha': {
         'key': 'key_live_ifzjOfbrf1gG6VPN0qSOnpjkBwfGxCF6',
-        'secret': 'secret_live_UacuxlWRATQkCSVey2Zcy4jvEfK9PxYr',
+        'secret': 'secret_live_xxx',
         'url': 'https://upsideappbeta.app.link'
     },
     'prod': {
         'key': 'key_live_lpAkPglukSH5VuTvgjti5lokDBjIm0Kn',
-        'secret': 'secret_live_An8B1VirdA8nPucN7JHClDxII5hjuTZd',
+        'secret': 'secret_live_xxx',
         'url': 'https://upside.app.link'
     }
 }

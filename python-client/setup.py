@@ -1,9 +1,9 @@
 from distutils.core import setup
 
 setup(
-    name='fix',
-    version='',
-    packages=['fix'],
+    name='client',
+    version='1.0.0',
+    packages=['client'],
     url='',
     license='',
     author='tvaughan',

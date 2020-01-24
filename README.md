@@ -5,7 +5,7 @@ Running tests
 =============
 
 ```
-BRANCH_API_KEY='a valid branch api key'; gradle test
+mvn clean install -Dbranch_api_key=key_live_...get from 1Password...F6
 ```
 
 Integrating Client

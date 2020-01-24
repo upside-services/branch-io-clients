@@ -20,7 +20,7 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by bsiemon on 11/8/16.
  */
-public class RetrofitBranchClient implements BranchClient {
+public final class RetrofitBranchClient implements BranchClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(BranchClient.class);
     private final BranchCredentials branchCredentials;
     private final BranchAPI branchAPI;

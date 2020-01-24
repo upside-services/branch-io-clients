@@ -54,10 +54,11 @@ public class RetryingBranchClient implements BranchClient {
 
     private void doWait(int attempt) {
         try {
-			Thread.sleep( FIBONACCI[attempt] * 1000 );
-		} catch (InterruptedException e) {
-			throw new RuntimeException( e );
-		}
+            Thread.sleep(FIBONACCI[attempt] * 1000);
+        }
+        catch(InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

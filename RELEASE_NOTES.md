@@ -1,5 +1,9 @@
 # Branch.io Java Client
 
+## 0.3.0 TBD
+
+* Converting from gradle to maven
+
 ## 0.2.0 2016/11/22
 
 * Changed interface to return URIs instead of URLs

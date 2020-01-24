@@ -4,7 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import static com.upside.branch_io.client.BranchClientFactory.ClientType.*;
+import static com.upside.branch_io.client.BranchClientFactory.ClientType.MOCK;
+import static com.upside.branch_io.client.BranchClientFactory.ClientType.REAL;
 
 /**
  * <p>Dropwizard-style Factory that can map from a JSON/YAML configuration file and supports creation of a real client

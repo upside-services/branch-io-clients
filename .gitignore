@@ -1,4 +1,5 @@
 *.class
+.idea
 target/
 env/
 dependency-reduced-pom.xml

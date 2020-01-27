@@ -23,7 +23,7 @@
         <!-- Default when no revision property is passed in from the commandline -->
         <revision>local-SNAPSHOT</revision>
         <scm.plugin-tag>v${project.version}</scm.plugin-tag>
-	    <version.retrofit>2.1.0</version.retrofit>
+	    <version.retrofit>2.7.1</version.retrofit>
     </properties>
 
     <build>

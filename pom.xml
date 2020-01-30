@@ -8,9 +8,9 @@
         <version>1.14.0</version>
     </parent>
 
-    <groupId>com.upside</groupId>
-    <artifactId>branch_io_client</artifactId>
-    <name>branch_io_client</name>
+    <groupId>com.upside.branch_io_client</groupId>
+    <artifactId>branch-io-java-client</artifactId>
+    <name>branch-io-java-client</name>
     <description>Java client for branch.io</description>
     <version>${revision}</version>
 

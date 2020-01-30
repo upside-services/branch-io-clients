@@ -1,9 +1,14 @@
 # Branch.io Java Client
 
+## 0.4.0 2020/01/30
+
+* Releasing 0.3.0 with the original "com.upside.branch-io-clients" package and the "branch-io-java-client" artifact 
+
 ## 0.3.0 2020/01/30
 
 * Converting from gradle to maven
 * Updating to latest CVE-patched retrofit JAR
+* This release was mis-packaged as "com.upside:branch-io-java-client" which was a mistake made during the gradle -> maven conversion
 
 ## 0.2.0 2016/11/22
 

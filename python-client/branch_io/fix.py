@@ -1,8 +1,6 @@
 from upside_core.services import create_public_service
 from promo_service.client import PromoService
-from pprint import pprint
 import jsondiff
-import json
 import sys
 import time
 import logging

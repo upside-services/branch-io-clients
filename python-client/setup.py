@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 
 from setuptools import setup, find_packages
+import branch_io
 
-import upside_core
-
-requires = ['boto3', 'requests']
+with open("requirements.txt") as infile:
+    requires = list(map(lambda x: x.strip(), infile.readlines()))
 
 setup_options = dict(
     name='branch-client',
-    version='1.0.1',
+    version=branch_io.__version__,
     description='Python client for branch.io.',
     long_description='Python client for branch.io.',
     author='Upside Services, Inc',

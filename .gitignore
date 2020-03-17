@@ -17,6 +17,3 @@ nbactions.xml
 hs_err_pid*
 *.iml
 *.pyc
-.gradle/
-build/
-/.nb-gradle/

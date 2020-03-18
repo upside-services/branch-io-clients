@@ -1,5 +1,9 @@
 # Branch.io Java Client
 
+## 0.5.0 2020/03/17
+
+* Updating to the latest parent pom (1.16.0) and standardizing CI/CD infra directory
+
 ## 0.4.0 2020/01/30
 
 * Releasing 0.3.0 with the original "com.upside.branch-io-clients" package and the "branch-io-java-client" artifact 

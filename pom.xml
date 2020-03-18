@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.upside</groupId>
         <artifactId>upside-parent-pom</artifactId>
-        <version>1.14.0</version>
+        <version>1.16.0</version>
     </parent>
 
     <groupId>com.upside.branch_io_client</groupId>

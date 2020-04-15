@@ -1,4 +1,11 @@
-upside-core==6.22.0
-runbook-service-client==3.20.0
-requests==2.23.0
-jsondiff==1.2.0
+## Internal Direct Dependencies
+upside-core>=6.27.0
+runbook-service-client>=3.24.0
+
+## External Direct Dependencies
+requests>=2.23.0,<2.24.0
+jsondiff>=1.2.0,<1.3.0
+
+## Indirect dependencies
+docutils==0.14 # Specifying docutils version because botocore 1.15.5 requires
+               # docutils<0.16 while upside-core 6.27 requires >=0.12

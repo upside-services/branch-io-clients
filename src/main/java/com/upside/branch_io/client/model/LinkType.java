@@ -3,7 +3,8 @@ package com.upside.branch_io.client.model;
 /**
  * Models the different types of branch.io links.
  *
- * @see <a href="https://github.com/BranchMetrics/branch-deep-linking-public-api">Branch IO HTTP API</a>
+ * @see <a href="https://github.com/BranchMetrics/branch-deep-linking-public-api">Branch IO HTTP
+ *     API</a>
  */
 public enum LinkType {
     ONE_TIME(1),

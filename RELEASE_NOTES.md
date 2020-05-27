@@ -1,6 +1,6 @@
 # Branch.io Java Client
 
-## 0.6.0 2020/05
+## 0.6.0 2020/05/26
 
 * Updating to the latest parent pom (2.1.1) w/ new Java checkstyle/linting
 * Updating the version of our retrofit jar from 2.7 -> 2.9 to pick up new Jackson versions (to shutup whitesource "of of date" library reports)

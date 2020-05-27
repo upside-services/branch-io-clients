@@ -1,11 +1,10 @@
 package com.upside.branch_io.client;
 
 import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
-/**
- * <p>Tests our factory creates the expected kinds of clients</p>
- */
+/** Tests our factory creates the expected kinds of clients */
 public class TestBranchClientFactory {
 
     @Test
@@ -17,7 +16,6 @@ public class TestBranchClientFactory {
         assertTrue("Expected a real client", factory.build() instanceof RetrofitBranchClient);
     }
 
-
     @Test
     public void testRetryingClientCreation() {
         BranchClientFactory factory = new BranchClientFactory();
@@ -25,7 +23,8 @@ public class TestBranchClientFactory {
         factory.setApiKey("foo");
         factory.setApiSecret("secret");
         factory.setRetryAttempts(1);
-        assertTrue("Expected a real retrying client", factory.build() instanceof RetryingBranchClient);
+        assertTrue(
+                "Expected a real retrying client", factory.build() instanceof RetryingBranchClient);
     }
 
     @Test

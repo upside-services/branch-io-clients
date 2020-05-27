@@ -7,8 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * <p>Useful stub client that doesn't attempt to connect to Branch.io and just returns a formulaic link based on its input
- * params</p>
+ * Useful stub client that doesn't attempt to connect to Branch.io and just returns a formulaic link
+ * based on its input params
  */
 public class MockBranchClient implements BranchClient {
     private static final Logger LOGGER = LoggerFactory.getLogger(BranchClient.class);
@@ -18,8 +18,7 @@ public class MockBranchClient implements BranchClient {
         try {
             LOGGER.warn("Creating a link with a Mock client.");
             return new URI("http://foo.com/" + alias);
-        }
-        catch (URISyntaxException ex) {
+        } catch (URISyntaxException ex) {
             throw new RuntimeException("Couldn't create a fake link from MockBranchClient", ex);
         }
     }

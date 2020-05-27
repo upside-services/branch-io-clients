@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.upside</groupId>
         <artifactId>upside-parent-pom</artifactId>
-        <version>1.16.0</version>
+        <version>2.1.1</version>
     </parent>
 
     <groupId>com.upside.branch_io_client</groupId>
@@ -22,7 +22,7 @@
     <properties>
         <!-- Default when no revision property is passed in from the commandline -->
         <revision>local-SNAPSHOT</revision>
-        <version.retrofit>2.7.1</version.retrofit>
+        <version.retrofit>2.9.0</version.retrofit>
 
         <maven.test.skip.exec>true</maven.test.skip.exec>
     </properties>

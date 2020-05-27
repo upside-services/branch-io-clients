@@ -7,14 +7,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.auto.value.AutoValue;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Request model for creating a new link.
- */
+/** Request model for creating a new link. */
 @AutoValue
 public abstract class CreateLinkRequest {
 
@@ -29,14 +26,16 @@ public abstract class CreateLinkRequest {
     public static final String LINK_TYPE = "type";
 
     @JsonCreator
-    public static CreateLinkRequest create(@JsonProperty(BRANCH_KEY) String branchKey,
-                                           @JsonProperty(ALIAS) String alias,
-                                           @JsonProperty(LINK_TYPE) int linkType,
-                                           @JsonProperty(CHANNEL) String channel,
-                                           @JsonProperty(CAMPAIGN) String campaign,
-                                           @JsonProperty(TAGS) List<String> tags,
-                                           @JsonProperty(DATA) String data) {
-        return new AutoValue_CreateLinkRequest(branchKey, alias, linkType, channel, campaign, tags, convertData(data));
+    public static CreateLinkRequest create(
+            @JsonProperty(BRANCH_KEY) String branchKey,
+            @JsonProperty(ALIAS) String alias,
+            @JsonProperty(LINK_TYPE) int linkType,
+            @JsonProperty(CHANNEL) String channel,
+            @JsonProperty(CAMPAIGN) String campaign,
+            @JsonProperty(TAGS) List<String> tags,
+            @JsonProperty(DATA) String data) {
+        return new AutoValue_CreateLinkRequest(
+                branchKey, alias, linkType, channel, campaign, tags, convertData(data));
     }
 
     @JsonProperty(BRANCH_KEY)
@@ -68,8 +67,7 @@ public abstract class CreateLinkRequest {
     public static String convertData(Map<String, String> data) {
         try {
             return OBJECT_MAPPER.writeValueAsString(data);
-        }
-        catch (JsonProcessingException e) {
+        } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
     }
@@ -77,8 +75,7 @@ public abstract class CreateLinkRequest {
     public static Map<String, String> convertData(String data) {
         try {
             return OBJECT_MAPPER.readValue(data, new TypeReference<Map<String, String>>() {});
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

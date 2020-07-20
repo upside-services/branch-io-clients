@@ -3,7 +3,7 @@ upside-core>=6.27.0
 runbook-service-client>=3.24.0
 
 ## External Direct Dependencies
-requests>=2.23.0,<2.24.0
+requests>=2.24.0
 jsondiff>=1.2.0,<1.3.0
 
 ## Indirect dependencies

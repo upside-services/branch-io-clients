@@ -15,3 +15,6 @@ branch_client.get_deep_link('uberdc')
 
 ```
 
+## Releasing
+
+This artifact is a weird one-off in that it's both a java-client and a python-client.  Our repo's ../infra directory sets up the java client but not (yet) the python client, so a temporary localhost release work-around is `python setup.py sdist bdist_wheel upload -r local`

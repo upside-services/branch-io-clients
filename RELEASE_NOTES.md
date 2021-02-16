@@ -1,5 +1,9 @@
 # Branch.io Java Client
 
+## 0.7.0 2021/02/16
+
+* Updating to the latest parent pom (2.6.1) w/ latest security patched 3rd party libraries
+
 ## 0.6.0 2020/05/26
 
 * Updating to the latest parent pom (2.1.1) w/ new Java checkstyle/linting
